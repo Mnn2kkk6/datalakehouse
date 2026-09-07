@@ -1,30 +1,28 @@
--Data Lakehouse là một kiến trúc quản lý dữ liệu được thiết kế để kết hợp những ưu điểm tốt nhất của cả Data Warehouse (Kho dữ liệu) và Data Lake (Hồ dữ liệu).
+- **Data Lakehouse** là một kiến trúc quản lý dữ liệu được thiết kế để kết hợp những ưu điểm tốt nhất của cả Data Warehouse (Kho dữ liệu) và Data Lake (Hồ dữ liệu).
 
--Data Lake và Data Warehouse khác nhau cốt lõi ở cách xử lý dữ liệu thô, cấu trúc lưu trữ và đối tượng phục vụ.
+- **Data Lake và Data Warehouse** khác nhau cốt lõi ở cách xử lý dữ liệu thô, cấu trúc lưu trữ và đối tượng phục vụ.
 
--Bronze/ Silver /Gold là cách chia dữ liệu thành 3 tầng tùy theo mức độ xử lý với:
-   +Bronze = Dữ liệu thô (raw data)
-   +Silver = Dữ liệu sạch (cleaned data)
-   +Gold = Dữ liệu đã sẵn sàng để dùng cho AI/BI(Business/AI Ready Data)
+- **Bronze/ Silver /Gold** là cách chia dữ liệu thành 3 tầng tùy theo mức độ xử lý với: 
+  - **Bronze** = Dữ liệu thô (raw data) 
+  - **Silver** = Dữ liệu sạch (cleaned data) 
+  - **Gold** = Dữ liệu đã sẵn sàng để dùng cho AI/BI(Business/AI Ready Data)
 
--Ingest :Đưa dữ liệu vào 1 hệ thống để hệ thống có thể xử lý (ví dụ đơn giản : file CSV đưa vào data warehouse hay dữ liệu realtime từ app đưa vào Kafka)
-  Data Ingestion = quá trình thu thập và đưa dữ liệu từ nguồn vào hệ thống dữ liệu
+- **Ingest**: Đưa dữ liệu vào 1 hệ thống để hệ thống có thể xử lý (ví dụ đơn giản : file CSV đưa vào data warehouse hay dữ liệu realtime từ app đưa vào Kafka)
+  - **Data Ingestion** = quá trình thu thập và đưa dữ liệu từ nguồn vào hệ thống dữ liệu
 
--ETL(extract -> transform -> load)
-  ELT(extract -> load -> transform)
-Điểm khác nhau:ETL xử lý dữ liệu trước khi lưu còn ELT lưu dữ liệu trước rồi mới xử lý sau.
+- **ETL** (extract -> transform -> load) và **ELT** (extract -> load -> transform) 
+  - **Điểm khác nhau**: ETL xử lý dữ liệu trước khi lưu còn ELT lưu dữ liệu trước rồi mới xử lý sau.
 
--Data catalog là hệ thống quản lý và mô tả dữ liệu giúp tìm và quản lý dữ liệu trong hệ thống (ví dụ đơn giản :Công ty có bảng customers chứa thông tin khách hàng. Data Catalog giúp nhân viên biết bảng nằm ở đâu, có dữ liệu gì và dùng để làm gì.)
+- **Data catalog** là hệ thống quản lý và mô tả dữ liệu giúp tìm và quản lý dữ liệu trong hệ thống (ví dụ đơn giản :Công ty có bảng customers chứa thông tin khách hàng. Data Catalog giúp nhân viên biết bảng nằm ở đâu, có dữ liệu gì và dùng để làm gì.)
 
--Table format = định dạng bảng (giúp thông tin sẽ được trình bày và sắp xếp theo hàng và cột nhằm dễ quản lý và kiểm soát data hơn)
+- **Table format** = định dạng bảng (giúp thông tin sẽ được trình bày và sắp xếp theo hàng và cột nhằm dễ quản lý và kiểm soát data hơn)
 
--Apache spark : một công cụ tính toán và xử lý dữ liệu siêu tốc trên diện rộng , có thể xử lý nhiều dòng dữ liệu cùng 1 lúc bằng cách chia nhỏ công việc cho nhiều máy tính chạy cùng  ( có thể truy vấn SQL , streaming , chạy thuật toán ML)
-Spark sẽ giúp :
- +phân tích dữ liệu lớn 
- +xử lý dữ liệu nhanh nhờ xử lý trên RAM 
- +xử lý cả dữ liệu batch và streaming
- +hỗ trợ học máy với MLlib
+- **Apache spark**: một công cụ tính toán và xử lý dữ liệu siêu tốc trên diện rộng , có thể xử lý nhiều dòng dữ liệu cùng 1 lúc bằng cách chia nhỏ công việc cho nhiều máy tính chạy cùng ( có thể truy vấn SQL , streaming , chạy thuật toán ML) Spark sẽ giúp: 
+  - phân tích dữ liệu lớn 
+  - xử lý dữ liệu nhanh nhờ xử lý trên RAM 
+  - xử lý cả dữ liệu batch và streaming 
+  - hỗ trợ học máy với MLlib
 
--MinIO là 1 hệ thống lưu trữ object mã nguồn mở dùng để lưu các loại dữ liệu như JSON , CSV , hình ảnh ,.... 
+- **MinIO** là 1 hệ thống lưu trữ object mã nguồn mở dùng để lưu các loại dữ liệu như JSON , CSV , hình ảnh ,....
 
--Nessie:dùng để quản lý metadata và version của các bảng dữ liệu trong datalake (giống git của datalake)
+- **Nessie**: dùng để quản lý metadata và version của các bảng dữ liệu trong datalake (giống git của datalake)
