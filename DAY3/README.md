@@ -1,62 +1,22 @@
-# Paradise Nursery
+# Báo cáo ngày 3 — Thực hành PySpark & Xử lý dữ liệu đơn hàng:
 
-Paradise Nursery is a React + Redux single-page e-commerce application for an
-online houseplant shop. It includes a landing page, an "About Us" section, a
-product listing page organized by category, and a fully functional shopping
-cart built with Redux Toolkit.
+🔗 **GitHub:** https://github.com/Mnn2kkk6/pyspark-orders-repo
 
-## Project Name
+## Công việc đã thực hiện :
 
-**Paradise Nursery** — "Where Green Meets Serenity"
+* Nghiên cứu **PySpark User Guide**: DataFrame, Functions, Spark SQL và đọc/ghi dữ liệu.
+* Thực hành **ETL với PySpark** trên dữ liệu đơn hàng:
 
-## Features
+  * Tạo file `orders.csv` gồm 200 đơn hàng mẫu.
+  * Tạo DataFrame với **Explicit Schema** (`StructType` / `StructField`).
+  * Thực hiện `printSchema`, `show`, `select`, `filter`, `groupBy`, `count`, `sum`.
+  * Sử dụng **Spark SQL** để truy vấn doanh thu theo tỉnh.
+  * Đọc dữ liệu từ CSV và xuất kết quả thành các file CSV bằng `coalesce(1)`.
+* Hoàn thiện cấu trúc project và đẩy toàn bộ source code lên GitHub.
 
-- **Landing page** with the company name, tagline, background image, and a
-  "Get Started" button that leads to the product listing.
-- **About Us** section with details about the company.
-- **Product listing page** showing houseplants grouped into categories
-  (Air Purifying Plants, Aromatic Plants, Succulents & Cacti), each with a
-  thumbnail, name, price, and an "Add to Cart" button.
-- **Navbar** with links to Home, Plants, and Cart, plus a live cart item
-  count.
-- **Shopping cart page** showing each item's thumbnail, name, unit price,
-  quantity controls, subtotal, a delete button, the total cart amount, a
-  "Continue Shopping" button, and a "Checkout" button (shows "Coming Soon").
-- **Redux Toolkit** cart slice managing add, increment, decrement, and
-  remove actions.
+## Tóm tắt kiến thức rút ra được :
 
-## Tech Stack
-
-- React (Vite)
-- Redux Toolkit + React-Redux
-- CSS
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-Then open the local URL shown in the terminal (typically
-`http://localhost:5173`).
-
-## Project Structure
-
-```
-src/
-├── App.jsx                 # Landing page + view routing
-├── App.css                 # Landing page styles (incl. background image)
-├── main.jsx                # App entry point, wraps App in Redux Provider
-├── components/
-│   ├── AboutUs.jsx         # Company details modal
-│   ├── ProductList.jsx     # Product listing page
-│   ├── ProductList.css
-│   ├── CartItem.jsx        # Shopping cart page
-│   └── CartItem.css
-├── redux/
-│   ├── CartSlice.jsx       # Redux slice for the shopping cart
-│   └── store.jsx           # Redux store configuration
-└── data/
-    └── plantsData.js       # Plant catalog data
-```
+* Hiểu sự khác nhau và mối liên hệ giữa **DataFrame API** và **Spark SQL**.
+* Hiểu vai trò của **Explicit Schema** và hạn chế của `inferSchema` trong môi trường production.
+* Hiểu cách sử dụng `coalesce(1)` để xuất dữ liệu thành một file và lưu ý không lạm dụng với dữ liệu lớn.
+* Nắm được quy trình ETL cơ bản bằng **PySpark** .
