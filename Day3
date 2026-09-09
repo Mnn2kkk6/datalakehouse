@@ -1,1 +1,22 @@
- Báo cáo ngày 3: Thực hành PySpark và Xử lý dữ liệu đơn hàng1. Nội dung công việc đã thực hiệnNghiên cứu lý thuyết: Đọc và nắm vững các phần quan trọng trong PySpark User Guide, bao gồm:  Chapter 1: DataFrames — Tạo DataFrame, xem cấu trúc và thao tác cơ bản.  Chapter 3: Function Junction — Làm sạch, biến đổi và tổng hợp dữ liệu.  Chapter 6: Old SQL, New Tricks — Chạy truy vấn SQL trên PySpark.  Chapter 7: Load and Behold — Đọc, ghi dữ liệu và các định dạng file.  Thực hiện bài thực hành ETL:Tạo dữ liệu mẫu: Viết script Python sinh file orders.csv gồm 200 dòng đơn hàng ngẫu nhiên.  DataFrame API: Khởi tạo DataFrame trực tiếp trong code với schema tường minh (StructType/StructField), thực hiện printSchema, show, select, lọc đơn hàng thành công (filter), và gom nhóm thống kê (groupBy theo province, tính count đơn và sum doanh thu).  Spark SQL: Đăng ký DataFrame thành Temp View (orders), viết câu lệnh SQL để truy vấn tổng doanh thu theo từng tỉnh.  Đọc và ghi file: Dùng PySpark đọc file CSV, xử lý toàn bộ luồng như trên và xuất kết quả ra từng file .csv riêng biệt bằng cách ứng dụng coalesce(1).  Quản lý mã nguồn: Đã hoàn thiện cấu trúc thư mục project và đẩy toàn bộ mã nguồn lên GitHub cá nhân.2. Những bài học và kinh nghiệm rút raDataFrame API vs. Spark SQL: Hai phương thức này cung cấp cú pháp linh hoạt khác nhau nhưng đều chung một tầng tối ưu hóa bên dưới (Catalyst Optimizer). DataFrame API phù hợp với các đoạn pipeline xử lý phức tạp, trong khi Spark SQL trực quan và tối ưu cho việc truy vấn báo cáo.  Quản lý Schema: Việc sử dụng inferSchema=True tiện lợi cho việc kiểm thử nhanh, nhưng đối với các hệ thống production, việc định nghĩa schema tường minh (Explicit Schema) giúp kiểm soát kiểu dữ liệu tốt hơn và tránh việc Spark phải quét dữ liệu nhiều lần.  Hiểu đúng về coalesce(1): Thao tác gom phân vùng dữ liệu về 1 file giúp trực quan hóa báo cáo quy mô nhỏ. Tuy nhiên, cần tránh lạm dụng trên tập dữ liệu lớn vì sẽ làm mất đi hiệu năng xử lý phân tán song song của Spark.  
+# Báo cáo ngày 3 — Thực hành PySpark & Xử lý dữ liệu đơn hàng
+
+🔗 **GitHub:** https://github.com/Mnn2kkk6/pyspark-orders-repo
+
+## Công việc đã thực hiện
+
+* Nghiên cứu **PySpark User Guide**: DataFrame, Functions, Spark SQL và đọc/ghi dữ liệu.
+* Thực hành **ETL với PySpark** trên dữ liệu đơn hàng:
+
+  * Sinh file `orders.csv` gồm 200 đơn hàng mẫu.
+  * Tạo DataFrame với **Explicit Schema** (`StructType` / `StructField`).
+  * Thực hiện `printSchema`, `show`, `select`, `filter`, `groupBy`, `count`, `sum`.
+  * Sử dụng **Spark SQL** để truy vấn doanh thu theo tỉnh.
+  * Đọc dữ liệu từ CSV và xuất kết quả thành các file CSV bằng `coalesce(1)`.
+* Hoàn thiện cấu trúc project và đẩy toàn bộ source code lên GitHub.
+
+## Kiến thức rút ra
+
+* Hiểu sự khác nhau và mối liên hệ giữa **DataFrame API** và **Spark SQL**.
+* Hiểu vai trò của **Explicit Schema** và hạn chế của `inferSchema` trong môi trường production.
+* Hiểu cách sử dụng `coalesce(1)` để xuất dữ liệu thành một file và lưu ý không lạm dụng với dữ liệu lớn.
+* Nắm được quy trình ETL cơ bản bằng **PySpark** từ đọc dữ liệu → xử lý → tổng hợp → xuất dữ liệu.
