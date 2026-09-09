@@ -19,4 +19,4 @@
 * Hiểu sự khác nhau và mối liên hệ giữa **DataFrame API** và **Spark SQL**.
 * Hiểu vai trò của **Explicit Schema** và hạn chế của `inferSchema` trong môi trường production.
 * Hiểu cách sử dụng `coalesce(1)` để xuất dữ liệu thành một file và lưu ý không lạm dụng với dữ liệu lớn.
-* Nắm được quy trình ETL cơ bản bằng **PySpark** từ extract → transform → load.
+* Nắm được quy trình ETL cơ bản bằng **PySpark** .
