@@ -2,7 +2,7 @@
 
 🔗 **GitHub:** https://github.com/Mnn2kkk6/pyspark-orders-repo
 
-## Công việc đã thực hiện
+## Công việc đã thực hiện :
 
 * Nghiên cứu **PySpark User Guide**: DataFrame, Functions, Spark SQL và đọc/ghi dữ liệu.
 * Thực hành **ETL với PySpark** trên dữ liệu đơn hàng:
@@ -14,7 +14,7 @@
   * Đọc dữ liệu từ CSV và xuất kết quả thành các file CSV bằng `coalesce(1)`.
 * Hoàn thiện cấu trúc project và đẩy toàn bộ source code lên GitHub.
 
-## Kiến thức rút ra
+## Tóm tắt kiến thức rút ra được :
 
 * Hiểu sự khác nhau và mối liên hệ giữa **DataFrame API** và **Spark SQL**.
 * Hiểu vai trò của **Explicit Schema** và hạn chế của `inferSchema` trong môi trường production.
