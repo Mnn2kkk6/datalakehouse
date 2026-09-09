@@ -7,7 +7,7 @@
 * Nghiên cứu **PySpark User Guide**: DataFrame, Functions, Spark SQL và đọc/ghi dữ liệu.
 * Thực hành **ETL với PySpark** trên dữ liệu đơn hàng:
 
-  * Sinh file `orders.csv` gồm 200 đơn hàng mẫu.
+  * Tạo file `orders.csv` gồm 200 đơn hàng mẫu.
   * Tạo DataFrame với **Explicit Schema** (`StructType` / `StructField`).
   * Thực hiện `printSchema`, `show`, `select`, `filter`, `groupBy`, `count`, `sum`.
   * Sử dụng **Spark SQL** để truy vấn doanh thu theo tỉnh.
@@ -19,4 +19,4 @@
 * Hiểu sự khác nhau và mối liên hệ giữa **DataFrame API** và **Spark SQL**.
 * Hiểu vai trò của **Explicit Schema** và hạn chế của `inferSchema` trong môi trường production.
 * Hiểu cách sử dụng `coalesce(1)` để xuất dữ liệu thành một file và lưu ý không lạm dụng với dữ liệu lớn.
-* Nắm được quy trình ETL cơ bản bằng **PySpark** từ đọc dữ liệu → xử lý → tổng hợp → xuất dữ liệu.
+* Nắm được quy trình ETL cơ bản bằng **PySpark** từ extract → transform → load.
