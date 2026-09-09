@@ -56,5 +56,5 @@ Extract → Transform → Load
 
 Hoàn thành một project ETL cơ bản sử dụng **PySpark**, từ khâu tạo dữ liệu, đọc dữ liệu, định nghĩa schema, xử lý và phân tích dữ liệu đến xuất kết quả.
 
-Đồng thời củng cố kiến thức về **DataFrame, Spark SQL, Explicit Schema và các thao tác xử lý dữ liệu cơ bản**, tạo nền tảng để tiếp tục thực hành các pipeline dữ liệu phức tạp hơn.
+Đồng thời củng cố thêm kiến thức về **DataFrame, Spark SQL, Explicit Schema và các thao tác xử lý dữ liệu cơ bản**, tạo nền tảng để tiếp tục thực hành các pipeline dữ liệu phức tạp hơn.
 
