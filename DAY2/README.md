@@ -1,62 +1,56 @@
-# Paradise Nursery
+## Báo cáo ngày 2, đã hoàn thành việc cài đặt và thiết lập môi trường cho các công nghệ/framework phục vụ hệ thống Big Data, bao gồm:
 
-Paradise Nursery is a React + Redux single-page e-commerce application for an
-online houseplant shop. It includes a landing page, an "About Us" section, a
-product listing page organized by category, and a fully functional shopping
-cart built with Redux Toolkit.
+* **Docker & Docker Compose**: sử dụng để tạo và quản lý môi trường chạy các service/container.
+* **Apache Spark / PySpark**: cài đặt và thiết lập môi trường xử lý dữ liệu phân tán bằng Python.
+* **Java**: cài đặt JDK làm môi trường cần thiết để Spark hoạt động.
+* **MinIO**: thiết lập object storage để lưu trữ dữ liệu theo mô hình tương tự S3.
+* **Apache Iceberg**: tìm hiểu và thiết lập table format để quản lý dữ liệu dạng bảng trên data lake.
+* **Project Nessie**: thiết lập Data Catalog hỗ trợ quản lý metadata và versioning cho Iceberg tables.
 
-## Project Name
+## Cách thực hiện
 
-**Paradise Nursery** — "Where Green Meets Serenity"
+Tiến hành kiểm tra và cài đặt từng thành phần, sau đó kiểm tra lại phiên bản và khả năng hoạt động của các framework thông qua Terminal/PowerShell.
 
-## Features
+Đối với hệ thống Big Data, sử dụng **Docker Compose** để định nghĩa và chạy các service trong cùng một hệ thống. Việc sử dụng Docker giúp các thành phần như Spark, MinIO, Iceberg và Nessie có thể hoạt động trong môi trường độc lập, đồng thời dễ dàng kết nối và quản lý.
 
-- **Landing page** with the company name, tagline, background image, and a
-  "Get Started" button that leads to the product listing.
-- **About Us** section with details about the company.
-- **Product listing page** showing houseplants grouped into categories
-  (Air Purifying Plants, Aromatic Plants, Succulents & Cacti), each with a
-  thumbnail, name, price, and an "Add to Cart" button.
-- **Navbar** with links to Home, Plants, and Cart, plus a live cart item
-  count.
-- **Shopping cart page** showing each item's thumbnail, name, unit price,
-  quantity controls, subtotal, a delete button, the total cart amount, a
-  "Continue Shopping" button, and a "Checkout" button (shows "Coming Soon").
-- **Redux Toolkit** cart slice managing add, increment, decrement, and
-  remove actions.
+## Hệ thống nhỏ đã build
 
-## Tech Stack
+Thực hành build một hệ thống Big Data cơ bản trên Docker với các thành phần chính:
 
-- React (Vite)
-- Redux Toolkit + React-Redux
-- CSS
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
+```text
+             Data / Files
+                  │
+                  ▼
+             ┌─────────┐
+             │  Spark  │
+             │ PySpark │
+             └────┬────┘
+                  │
+                  ▼
+             ┌─────────┐
+             │ Iceberg │
+             └────┬────┘
+                  │
+          ┌───────┴───────┐
+          ▼               ▼
+      ┌────────┐      ┌────────┐
+      │ MinIO  │      │ Nessie │
+      │Storage │      │Catalog │
+      └────────┘      └────────┘
 ```
 
-Then open the local URL shown in the terminal (typically
-`http://localhost:5173`).
+Trong quá trình thực hành, em đã làm quen với việc:
 
-## Project Structure
+1. Khởi chạy các container bằng **Docker Compose**.
+2. Kết nối Spark/PySpark với các service trong Docker network.
+3. Sử dụng PySpark để thực hiện một số thao tác xử lý dữ liệu cơ bản.
+4. Tìm hiểu cách lưu trữ dữ liệu trên **MinIO**.
+5. Tìm hiểu cách **Iceberg** quản lý dữ liệu dạng table trên Data Lake.
+6. Tìm hiểu vai trò của **Nessie** trong việc quản lý catalog và metadata của Iceberg.
+7. Thực hành build, start, stop và kiểm tra trạng thái các container trong hệ thống.
 
-```
-src/
-├── App.jsx                 # Landing page + view routing
-├── App.css                 # Landing page styles (incl. background image)
-├── main.jsx                # App entry point, wraps App in Redux Provider
-├── components/
-│   ├── AboutUs.jsx         # Company details modal
-│   ├── ProductList.jsx     # Product listing page
-│   ├── ProductList.css
-│   ├── CartItem.jsx        # Shopping cart page
-│   └── CartItem.css
-├── redux/
-│   ├── CartSlice.jsx       # Redux slice for the shopping cart
-│   └── store.jsx           # Redux store configuration
-└── data/
-    └── plantsData.js       # Plant catalog data
-```
+## Kết quả
+
+Đến cuối ngày, đã hoàn thành việc thiết lập môi trường và bước đầu hiểu được cách các công nghệ **Docker + Spark/PySpark + MinIO + Iceberg + Nessie** kết hợp với nhau để xây dựng một hệ thống xử lý và lưu trữ dữ liệu.
+
+Hoàn thành thêm một số bài tập cơ bản để làm quen với Spark/PySpark và Docker, đồng thời hiểu hơn về quy trình build và vận hành một hệ thống Big Data trên Docker.
