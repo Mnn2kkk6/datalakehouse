@@ -1,4 +1,4 @@
-Trong ngày thứ 2, em đã hoàn thành việc cài đặt và thiết lập môi trường cho các công nghệ/framework phục vụ hệ thống Big Data, bao gồm:
+## Báo cáo ngày thứ 2, đã hoàn thành việc cài đặt và thiết lập môi trường cho các công nghệ/framework phục vụ hệ thống Big Data, bao gồm:
 
 * **Docker & Docker Compose**: sử dụng để tạo và quản lý môi trường chạy các service/container.
 * **Apache Spark / PySpark**: cài đặt và thiết lập môi trường xử lý dữ liệu phân tán bằng Python.
