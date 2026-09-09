@@ -1,62 +1,37 @@
-# Paradise Nursery
 
-Paradise Nursery is a React + Redux single-page e-commerce application for an
-online houseplant shop. It includes a landing page, an "About Us" section, a
-product listing page organized by category, and a fully functional shopping
-cart built with Redux Toolkit.
+Báo cáo ngày đầu tiên, đã tìm hiểu và nắm được các khái niệm cơ bản về **Data Lakehouse, Data Lake vs Data Warehouse, Bronze/Silver/Gold, Ingest, ETL/ELT, Data Catalog, Table Format, Spark, MinIO và Nessie**.
 
-## Project Name
+Trình bày lại về **khái niệm, tác dụng và ứng dụng thực tế** của các công nghệ trên. Ngoài ra, tiếp tục tìm hiểu thêm về **cách kết hợp Spark và Kafka** trong hệ thống Big Data.
 
-**Paradise Nursery** — "Where Green Meets Serenity"
 
-## Features
 
-- **Landing page** with the company name, tagline, background image, and a
-  "Get Started" button that leads to the product listing.
-- **About Us** section with details about the company.
-- **Product listing page** showing houseplants grouped into categories
-  (Air Purifying Plants, Aromatic Plants, Succulents & Cacti), each with a
-  thumbnail, name, price, and an "Add to Cart" button.
-- **Navbar** with links to Home, Plants, and Cart, plus a live cart item
-  count.
-- **Shopping cart page** showing each item's thumbnail, name, unit price,
-  quantity controls, subtotal, a delete button, the total cart amount, a
-  "Continue Shopping" button, and a "Checkout" button (shows "Coming Soon").
-- **Redux Toolkit** cart slice managing add, increment, decrement, and
-  remove actions.
+#Tóm tắt ghi nhớ kiến thức:
 
-## Tech Stack
+- **Data Lakehouse** là một kiến trúc quản lý dữ liệu được thiết kế để kết hợp những ưu điểm tốt nhất của cả Data Warehouse (Kho dữ liệu) và Data Lake (Hồ dữ liệu).
 
-- React (Vite)
-- Redux Toolkit + React-Redux
-- CSS
+- **Data Lake và Data Warehouse** khác nhau cốt lõi ở cách xử lý dữ liệu thô, cấu trúc lưu trữ và đối tượng phục vụ.
 
-## Getting Started
+- **Bronze/ Silver /Gold** là cách chia dữ liệu thành 3 tầng tùy theo mức độ xử lý với: 
+  - **Bronze** = Dữ liệu thô (raw data) 
+  - **Silver** = Dữ liệu sạch (cleaned data) 
+  - **Gold** = Dữ liệu đã sẵn sàng để dùng cho AI/BI(Business/AI Ready Data)
 
-```bash
-npm install
-npm run dev
-```
+- **Ingest**: Đưa dữ liệu vào 1 hệ thống để hệ thống có thể xử lý (ví dụ đơn giản : file CSV đưa vào data warehouse hay dữ liệu realtime từ app đưa vào Kafka)
+  - **Data Ingestion** = quá trình thu thập và đưa dữ liệu từ nguồn vào hệ thống dữ liệu
 
-Then open the local URL shown in the terminal (typically
-`http://localhost:5173`).
+- **ETL** (extract -> transform -> load) và **ELT** (extract -> load -> transform) 
+  - **Điểm khác nhau**: ETL xử lý dữ liệu trước khi lưu còn ELT lưu dữ liệu trước rồi mới xử lý sau.
 
-## Project Structure
+- **Data catalog** là hệ thống quản lý và mô tả dữ liệu giúp tìm và quản lý dữ liệu trong hệ thống (ví dụ đơn giản :Công ty có bảng customers chứa thông tin khách hàng. Data Catalog giúp nhân viên biết bảng nằm ở đâu, có dữ liệu gì và dùng để làm gì.)
 
-```
-src/
-├── App.jsx                 # Landing page + view routing
-├── App.css                 # Landing page styles (incl. background image)
-├── main.jsx                # App entry point, wraps App in Redux Provider
-├── components/
-│   ├── AboutUs.jsx         # Company details modal
-│   ├── ProductList.jsx     # Product listing page
-│   ├── ProductList.css
-│   ├── CartItem.jsx        # Shopping cart page
-│   └── CartItem.css
-├── redux/
-│   ├── CartSlice.jsx       # Redux slice for the shopping cart
-│   └── store.jsx           # Redux store configuration
-└── data/
-    └── plantsData.js       # Plant catalog data
-```
+- **Table format** = định dạng bảng (giúp thông tin sẽ được trình bày và sắp xếp theo hàng và cột nhằm dễ quản lý và kiểm soát data hơn)
+
+- **Apache spark**: một công cụ tính toán và xử lý dữ liệu siêu tốc trên diện rộng , có thể xử lý nhiều dòng dữ liệu cùng 1 lúc bằng cách chia nhỏ công việc cho nhiều máy tính chạy cùng ( có thể truy vấn SQL , streaming , chạy thuật toán ML) Spark sẽ giúp: 
+  - phân tích dữ liệu lớn 
+  - xử lý dữ liệu nhanh nhờ xử lý trên RAM 
+  - xử lý cả dữ liệu batch và streaming 
+  - hỗ trợ học máy với MLlib
+
+- **MinIO** là 1 hệ thống lưu trữ object mã nguồn mở dùng để lưu các loại dữ liệu như JSON , CSV , hình ảnh ,....
+
+- **Nessie**: dùng để quản lý metadata và version của các bảng dữ liệu trong datalake (giống git của datalake)
