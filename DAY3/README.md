@@ -26,7 +26,7 @@
     * `groupBy`
     * `count`
     * `sum`
-  * Sử dụng **Spark SQL** để truy vấn và tính toán doanh thu theo tỉnh.
+  * Sử dụng **Spark SQL** để truy vấn và tính toán doanh thu theo từng tỉnh.
   * Đọc dữ liệu từ CSV và xuất kết quả thành các file CSV bằng `coalesce(1)`.
   * Hoàn thiện cấu trúc project và đẩy toàn bộ source code lên **GitHub**.
 
