@@ -1,6 +1,6 @@
 # 📚 BÁO CÁO NGÀY ĐẦU TIÊN
 
-Đã tìm hiểu và nắm được các khái niệm cơ bản về **Data Lakehouse, Data Lake vs Data Warehouse, Bronze/Silver/Gold, Ingest, ETL/ELT, Data Catalog, Table Format, Spark, MinIO và Nessie**.
+Đã tìm hiểu và nắm được các khái niệm cơ bản về **Data Lakehouse,so sánh Data Lake với Data Warehouse, Bronze/Silver/Gold, Ingest, ETL/ELT, Data Catalog, Table Format, Spark, MinIO và Nessie**.
 
 Trình bày lại về **khái niệm, tác dụng và ứng dụng thực tế** của các công nghệ trên. Ngoài ra, tiếp tục tìm hiểu thêm về **cách kết hợp Spark và Kafka** trong hệ thống Big Data.
 
