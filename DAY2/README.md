@@ -45,7 +45,7 @@ Thực hành build một hệ thống Big Data cơ bản trên Docker với các
       └────────┘      └────────┘
 ```
 
-Trong quá trình thực hành, em đã làm quen với:
+Trong quá trình thực hành, làm quen với:
 
 1. Khởi chạy các container bằng **Docker Compose**.
 2. Kết nối **Spark/PySpark** với các service trong Docker Network.
